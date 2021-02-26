@@ -35,7 +35,14 @@ Test files are like hints and they are supposed to help and hint you towards a w
 
 ![pytest](pytest_red.png)
 
+## What is an assertion error? 🤔
+Assertion error is caused when a program is run and the answer is opposite of what was expected. For example, if we expect the output to be **True** but the result is **False**, we get an assertion error.
+
 # How to read test outputs
 
 On the above image, we have seen that some of our test is failing. Now we will go through on how to read and detect which function is giving us an error. 🕵🏽‍♀️🕵🏽‍♂️
 
+The last section of the pytest error show the short test summary info.
+This  info tells us which test function is not working. For example in the above image, it shows the ```test_lines_printed_backwards``` is the one having an assertion error. 
+
+From this information, we can then assume that the ```lines_printed_backwards()``` function is the one not working.

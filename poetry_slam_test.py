@@ -27,7 +27,7 @@ class PoetrySlamTest(unittest.TestCase):
     """Tests the lines_printed_backwards function."""
     filename = "poem.txt"
     poem_list = get_file_lines(filename)
-    expected_output = "5 and the  giving away to night.\n\n4 strongest point of time. Remember sundown\n\n3 Remember the sun's birth at dawn, that is the\n\n2 Remember the moon, know who she is.\n\n1 know each of the star's stories.\n\n0 Remember the sky that you were born under,\n\n"
+    expected_output = "5 and the giving away to night.\n\n4 strongest point of time. Remember sundown\n\n3 Remember the sun's birth at dawn, that is the\n\n2 Remember the moon, know who she is.\n\n1 know each of the star's stories.\n\n0 Remember the sky that you were born under,\n\n"
     lines_printed_backwards(poem_list)
     self.assertEqual(mock_stdout.getvalue(), expected_output)
 
