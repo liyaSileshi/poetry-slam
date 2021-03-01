@@ -12,8 +12,10 @@ Enter the following command in your terminal:
 
 pytest works by finding test files and then running test classes and test functions in them. It finds the tests by searching in current folder and sub-folders for any files whose names starts or ends with  **\_test** or **test\_** respectively as follows:
 
-1. test_*.py
+1. test_*.py 
+  * For example: test_poetry_slam.py
 2. *_test.py
+  * For example: poetry_slam_test.py
 
 To run the test file use the ```pytest``` command on your terminal.
 
@@ -38,11 +40,48 @@ Test files are like hints and they are supposed to help and hint you towards a w
 ## What is an assertion error? 🤔
 Assertion error is caused when a program is run and the answer is opposite of what was expected. For example, if we expect the output to be **True** but the result is **False**, we get an assertion error.
 
-# How to read test outputs
+# How to read test outputs then fix errors
 
-On the above image, we have seen that some of our test is failing. Now we will go through on how to read and detect which function is giving us an error. 🕵🏽‍♀️🕵🏽‍♂️
+![pytest](pytest_lines_printed_backward.png)
+
+On the above image, we have seen that one of our test is failing. Now we will go through on how to read and detect which function is giving us an error. 🕵🏽‍♀️🕵🏽‍♂️
 
 The last section of the pytest error show the short test summary info.
-This  info tells us which test function is not working. For example in the above image, it shows the ```test_lines_printed_backwards``` is the one having an assertion error. 
+This info tells us which test function is not working. For example in the above image, it shows the ```test_lines_printed_backwards``` is the one having an assertion error. 
 
 From this information, we can then assume that the ```lines_printed_backwards()``` function is the one not working.
+
+Let's walk through the example error output and look at the steps on identifying the bug and fixing it.
+
+On the screenshot above, we see that there are 2 different versions for each line of the poem. These lines are prefixed with ```-``` or ```+``` sign. 
+The ```-``` sign is to show that that line needs to be removed and replaced by the line with the ```+``` sign.
+
+## For example: 
+```
+ - and the giving away to night.
+ + 5 and the giving away to night.
+```
+
+The line that our program output was  ```and the giving away to night.```. But this is the wrong output and our program needs to output  ```5 and the giving away to night.``` instead. 
+
+We can see that the difference between the two lines is the number ```5```. 
+
+Let's reread the instruction for the ```lines_printed_backwards``` question again.
+
+```
+Create a function called lines_printed_backwards():
+It should have 1 parameter called lines_list, which is a list of strings 
+containing lines of your poem.
+It should print the lines of the poem in reverse. Include the original line
+number at the beginning of each line.
+```
+
+Based on the instruction, we're missing to add the original line number at the beginning of each line. 
+
+From this, we can understand that our function ```lines_printed_backwards()``` is missing to add the line number at the beginning of each line and that's where our error is coming from. 
+
+Let's go ahead and fix this bug! 🐞
+
+After fixing the bug test your functions again using the ```pytest``` command. You should be able to see your tests run without no error message. 
+
+![pytest](pytest_green.png)

@@ -9,6 +9,12 @@ from unittest.mock import patch, call
 
 class PoetrySlamTest(unittest.TestCase):
 
+  def test_get_file_lines_not_empty(self):
+    filename = "poem.txt"
+    poem_list = get_file_lines(filename)
+    print(len(poem_list))
+    assert len(poem_list) != 0
+
   def test_get_file_lines(self):
     """Tests the get_file_lines function."""
     filename = "poem.txt"

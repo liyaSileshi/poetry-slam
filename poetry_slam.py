@@ -21,6 +21,7 @@ number at the beginning of each line.
 def lines_printed_backwards(lines_list):
   for i in reversed(range(len(lines_list))):
     print(f"{i} {lines_list[i]}")
+    # print(f"{lines_list[i]}")
 
 """Activity 3:
 Create a function called lines_printed_random():
