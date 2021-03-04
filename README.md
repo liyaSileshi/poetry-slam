@@ -85,3 +85,7 @@ Let's go ahead and fix this bug! 🐞
 After fixing the bug, test your functions again using the ```pytest``` command. You should be able to see your tests run without an error message. 
 
 ![pytest](pytest_green.png)
+
+#
+## Resources
+[SPD2.3 Pytest tutorial](https://github.com/Make-School-Courses/SPD-2.31-Testing-and-Architecture/tree/master/lab/pytest)
